@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+	<table name="btResponsiveImage">
+		<field name="bID" type="I">
+			<key />
+			<unsigned />
+		</field>
+		<field name="pictureID" type="I"></field>
+		<field name="mediumpictureID" type="I"></field>
+		<field name="largepictureID" type="I"></field>
+		<field name="responsive_solution" type="C" size="255"></field>
+		<field name="altText" type="C" size="255"></field>
+	</table>
+</schema>
