@@ -9,7 +9,8 @@ a concrete5 add-on that uses Responsive Image techniques.
 
 
 Foundation Interchange
-======================
+======================  
+stock/standard Foundation media queries
 ![Demo Gif](./screens/responsive_interchange.gif)  
 
 PictureFill 
