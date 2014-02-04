@@ -5,10 +5,25 @@
 			<key />
 			<unsigned />
 		</field>
-		<field name="pictureID" type="I"></field>
-		<field name="mediumPictureFID" type="I"></field>
-		<field name="largePictureFID" type="I"></field>
 		<field name="responsive_solution" type="C" size="255"></field>
+		<field name="altChoice" type="C" size="255"></field>
 		<field name="altText" type="C" size="255"></field>
+		<field name="mediaQuery" type="C" size="255"></field>
+
+		<field name="pictureID" type="I"></field>
+		<field name="defaultQuery" type="C" size="255"></field>
+		<field name="customDefault" type="C" size="255"></field>
+
+		<field name="mediumPictureFID" type="I"></field>
+		<field name="mediumQuery" type="C" size="255"></field>
+		<field name="customMedium" type="C" size="255"></field>
+
+		<field name="largePictureFID" type="I"></field>
+		<field name="largeQuery" type="C" size="255"></field>
+		<field name="customLarge" type="C" size="255"></field>
+
+		<field name="retinaPictureFID" type="I"></field>
+		<field name="retinaQuery" type="C" size="255"></field>
+		<field name="customretina" type="C" size="255"></field>
 	</table>
 </schema>
