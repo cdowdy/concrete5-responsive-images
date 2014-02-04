@@ -9,12 +9,11 @@
 	$default     = File::getByID($pictureID);
 	$defaultPath = $default->getVersion()->getRelativePath();
 	// medium picture
-	$medium      = File::getByID($mediumpictureID);
+	$medium      = File::getByID($mediumPictureFID);
 	$mediumPath  = $medium->getVersion()->getRelativePath();
 	// large picture
-	$large       = File::getByID($largepictureID);
+	$large       = File::getByID($largePictureFID);
 	$largePath   = $large->getVersion()->getRelativePath();
-
 	switch ($responsive_solution) {
 		case 'interchange':
 			$this->inc('/inc/interchange.php');
