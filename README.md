@@ -10,8 +10,12 @@ a concrete5 add-on that uses Responsive Image techniques.
 
 Foundation Interchange
 ======================  
-stock/standard Foundation media queries
+**stock/standard Foundation media queries**
 ![Demo Gif](./screens/responsive_interchange.gif)  
+
+**custom media queries with extra large image for bigger displays/retina displays** 
+![custom gif](./screens/custom_interchange.gif)  
+
 
 PictureFill 
 ===========
