@@ -45,6 +45,14 @@ class ResponsiveImageBlockController extends BlockController {
 		return File::getByID( $this->largePictureFID ); 
 	}
 
+	// Extra Large oorr stupid name Retina 
+	public function getRetinaPicture() {
+		return $this->retinaPictureFID;
+	}
+	public function getRetinaPictureObject() {
+		return File::getByID( $this->retinaPictureFID );
+	}
+
 /*
 	REMINDER:: PUT DEFAULT PICTURE, SMALL-MEDIUM AND LARGE QUERIES IN THE VIEW FUNCTION
 
@@ -54,10 +62,12 @@ class ResponsiveImageBlockController extends BlockController {
 		$fs = FileSet::getByID( $this->pictureID );
 		$ms = FileSet::getByID( $this->mediumPictureFID );
 		$ls = FileSet::getByID( $this->largePictureFID );
+		$rs = FileSet::getByID( $this->retinaPictureFID );
 
 		$this->set( 'picture', $this->getDefaultPicture() );
 		$this->set( 'medium', $this->getMediumPicture() );
 		$this->set( 'large', $this->getLargePicture() );
+		$this->set( 'retina', $this->getRetinaPicture() );
 	}
 /*
 	public function on_page_view() {
