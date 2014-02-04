@@ -6,8 +6,8 @@
 			<unsigned />
 		</field>
 		<field name="pictureID" type="I"></field>
-		<field name="mediumpictureID" type="I"></field>
-		<field name="largepictureID" type="I"></field>
+		<field name="mediumPictureFID" type="I"></field>
+		<field name="largePictureFID" type="I"></field>
 		<field name="responsive_solution" type="C" size="255"></field>
 		<field name="altText" type="C" size="255"></field>
 	</table>
