@@ -1,8 +1,23 @@
 <?php defined('C5_EXECUTE') or die('Access denied.');
 	// load form helper
-	$form = Loader::helper( 'form' );
-	// load asset library (for photos)
-	$al   = Loader::helper('concrete/asset_library');	
+$form = Loader::helper( 'form' );
+// load asset library (for photos)
+$al   = Loader::helper('concrete/asset_library');	
+
+$bf = null;
+$bf_Medium = null;
+$bf_Large = null;
+$bf_retina = null;
+
+if ($controller->getDefaultPicture() > 0) { 
+	$bf = $controller->getDefaultPictureObject();
+}
+if ($controller->getMediumPicture() > 0) { 
+	$bf_Medium = $controller->getMediumPictureObject();
+}
+if ($controller->getLargePicture() > 0) { 
+	$bf_Large = $controller->getLargePictureObject();
+}
 ?>
 <style>
 table {
@@ -96,12 +111,12 @@ only screen and (min-resolution: 2dppx)' ); ?></td>
 </div>
 <div id="images-tab">
 	<div class="clearfix">
-		<h5><?php echo t('Choose Your Responsive Image Solution'); ?></h5>
+		<h5><?php echo t( 'Choose Your Responsive Image Solution' ); ?></h5>
 	</div>
 	<div class="clearfix">
 		<div class="ccm-block-field-group">
 			<div class="control-group">
-				<label for="responsive_solution" class="control-label"><?php echo t('Choose Solution');?></label>
+				<label for="responsive_solution" class="control-label"><?php echo t( 'Choose Solution' );?></label>
 				<div class="controls">
 					<select name="responsive_solution" id="responsive_solution">
 						<option value="empty_select"><?php echo t( 'Select Solution' ); ?></option>
@@ -117,7 +132,7 @@ only screen and (min-resolution: 2dppx)' ); ?></td>
 			<div class="control-group">
 				<?php echo $form->label('pictureID', 'Choose Default Image'); ?>
 				<div class="controls">
-					<?php echo $al->image('ccm-b-image', 'pictureID', t('Choose Image'), $this->controller->getDefaultPicture()); ?>
+					<?php echo $al->image('ccm-b-image', 'pictureID', t('Choose Image'), $bf); ?>
 				</div>
 			</div>
 			<div class="control-group">
@@ -131,9 +146,9 @@ only screen and (min-resolution: 2dppx)' ); ?></td>
 	<div class="clearfix">
 		<div  class="ccm-block-field-group">
 			<div class="control-group">
-				<?php echo $form->label('mediumpictureID', 'Choose Medium Image'); ?>
+				<?php echo $form->label('mediumPictureFID', 'Choose Medium Image'); ?>
 				<div class="controls">
-					<?php echo $al->image('ccm-b-image2', 'mediumpictureID', t('Choose Medium Image'), $this->controller->getMediumPicture()); ?>
+					<?php echo $al->image('ccm-b-image2', 'mediumPictureFID', t('Choose Medium Image'), $bf_Medium); ?>
 				</div>
 			</div>
 		</div>
@@ -141,9 +156,9 @@ only screen and (min-resolution: 2dppx)' ); ?></td>
 	<div class="clearfix">
 		<div class="ccm-block-field-group">
 			<div class="control-group">
-				<?php echo $form->label('largepictureID', 'Choose Large Image'); ?>
+				<?php echo $form->label('largePictureFID', 'Choose Large Image'); ?>
 				<div class="controls">
-					<?php echo $al->image('ccm-b-image3', 'largepictureID', t('Choose Large Image'), $this->controller->getLargePicture()); ?>
+					<?php echo $al->image('ccm-b-image3', 'largePictureFID', t('Choose Large Image'), $bf_Large); ?>
 				</div>
 			</div>
 		</div>
