@@ -9,10 +9,10 @@
 	$default     = File::getByID($pictureID);
 	$defaultPath = $default->getVersion()->getRelativePath();
 	// medium picture
-	$medium      = File::getByID($mediumpictureID);
+	$medium      = File::getByID($mediumPictureFID);
 	$mediumPath  = $medium->getVersion()->getRelativePath();
 	// large picture
-	$large       = File::getByID($largepictureID);
+	$large       = File::getByID($largePictureFID);
 	$largePath   = $large->getVersion()->getRelativePath();
 
 	
@@ -23,7 +23,7 @@
 </div>
 <?php } ?>
 <div>
-	<img data-interchange="[<?php echo $defaultPath;?>, (small)], [<?php echo $mediumPath;?>, (medium)], [<?php echo $largePath;?>, (large)]">
+	<img data-interchange="[<?php echo $defaultPath;?>, (default)], [<?php echo $mediumPath;?>, (medium)], [<?php echo $largePath;?>, (large)]">
 	<noscript><img src="<?php echo $defaultPath;?>"></noscript>
 </div>
 <?php
