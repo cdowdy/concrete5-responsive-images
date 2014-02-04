@@ -23,15 +23,15 @@ class ResponsiveImageBlockController extends BlockController {
 
 	// default (small no javascript) pictures
 	public function getDefaultPicture() {
-		return $this->fIDpicture;
+		return $this->pictureID;
 	}
 	function getDefaultPictureObject() {
-		return File::getByID( $this->fIDpicture );
+		return File::getByID( $this->pictureID );
 	}
 
 	// medium pictures
 	public function getMediumPicture() {
-		return $this->mediumPicture;
+		return $this->mediumPictureFID;
 	}
 	public function getMediumPictureObject() {
 		return File::getByID( $this->mediumPictureFID ); 
@@ -39,10 +39,10 @@ class ResponsiveImageBlockController extends BlockController {
 
 	// Large pictures
 	public function getLargePicture() {
-		return $this->LargePicture;
+		return $this->largePictureFID;
 	}
 	public function getLargePictureObject() {
-		return File::getByID( $this->largePitureFID ); 
+		return File::getByID( $this->largePictureFID ); 
 	}
 
 /*
@@ -52,8 +52,8 @@ class ResponsiveImageBlockController extends BlockController {
 
 	public function view() {
 		$fs = FileSet::getByID( $this->pictureID );
-		$ms = FileSet::getByID( $this->mediumpictureID );
-		$ls = FileSet::getByID( $this->largepictureID );
+		$ms = FileSet::getByID( $this->mediumPictureFID );
+		$ls = FileSet::getByID( $this->largePictureFID );
 
 		$this->set( 'picture', $this->getDefaultPicture() );
 		$this->set( 'medium', $this->getMediumPicture() );
