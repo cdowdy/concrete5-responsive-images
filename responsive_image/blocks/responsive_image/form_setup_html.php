@@ -277,13 +277,3 @@ $('#addMore').click(function(event){
     $('.pic_container .ui-helper-hidden:eq(0)').removeClass('ui-helper-hidden');
     });
 </script>
-<script type="text/javascript">
-  var ActiveTab = "images"; 
-  $("#responsive_tabs a").click(function() {
-    $("li.ccm-nav-active").removeClass('ccm-nav-active');
-    $("#" + ActiveTab + "-tab").hide();
-    ActiveTab = $(this).attr('id');
-    $(this).parent().addClass("ccm-nav-active");
-    $("#" + ActiveTab + "-tab").show();
-  });
-</script>
