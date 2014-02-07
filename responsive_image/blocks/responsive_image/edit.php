@@ -39,10 +39,10 @@ $foundationMedia = array(
 -->
 <div class="clearfix">
 	<ul id="responsive_tabs" class="ccm-dialog-tabs tabs">
-    <li class="ccm-nav-active"><a href="javascript:void(0)" id="images"><?php echo t('Images');?></a></li>
-    <li><a href="javascript:void(0)" id="media_queries"><?php echo t('Media Queries'); ?></a></li>
-    <li><a href="javascript:void(0)" id="picturefill_help"><?php echo t('Help'); ?></a></li>
-  </ul>
+		<li class="ccm-nav-active"><a href="javascript:void(0)" id="images"><?php echo t('Images');?></a></li>
+		<li><a href="javascript:void(0)" id="media_queries"><?php echo t('Media Queries'); ?></a></li>
+		<li><a href="javascript:void(0)" id="picturefill_help"><?php echo t('Help'); ?></a></li>
+	</ul>
 </div> <!-- End .clearfix and tabs -->
 <!-- 
 	Media Queries tab
