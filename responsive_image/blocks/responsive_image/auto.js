@@ -46,6 +46,10 @@ $(document).ready(function() {
    $('#altChoice').change(function() {
    ($(this).val() == "custom") ? $('#custom_div').show() : $('#custom_div').hide();
   });
+   $('#internetExplorer').hide();
+   $('#responsive_solution').change(function() {
+   ($(this).val() == "pictureFill") ? $('#internetExplorer').show() : $('#internetExplorer').hide();
+  });
 });
 // tabs 
   var ActiveTab = "images"; 
@@ -56,3 +60,11 @@ $(document).ready(function() {
     $(this).parent().addClass("ccm-nav-active");
     $("#" + ActiveTab + "-tab").show();
   });
+// input validation 
+function ccmValidateBlockForm() {
+
+  if ($('#responsive_solution').val() == 'empty_select') {
+    ccm_addError(ccm_t('selection-required'));
+  }
+  return false;
+}
