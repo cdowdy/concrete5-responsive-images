@@ -69,12 +69,11 @@ class ResponsiveImageBlockController extends BlockController {
 		$this->set( 'large', $this->getLargePicture() );
 		$this->set( 'retina', $this->getRetinaPicture() );
 	}
-/*
-	public function on_page_view() {
-			$html = Loader::helper( 'html' );
-			$bv   = new BlockView();
-			$bv->setBlockObject( $this->getBlockObject() );
-			$this->addHeaderItem( $html->css( $bv->getBlockURL() . '/responsive_css/foundation_mq.css' ) );
+	public function getJavaScriptStrings() {
+			return array(
+				'selection-required' => t( 'Please Select a Responsive Solution.' ),
+				'default-required'   => t( 'Please Select a Default Image.' ),
+				'medium-requred'     => t( 'Please Select a Medium Image.' ),
+			);
+		}
 	}
-*/
-}
