@@ -108,48 +108,44 @@ $screenSizesMQ = array(
 -->
 <div id="picturefill_help-tab" class="clearfix ui-helper-hidden">
   <div class="page-header">
-    <h3><?php echo t( 'Interchange' );?></h3>
-  </div>
-  <p><?php echo t( 'The Interchange markup is a bit different than PictureFill\'s. If you wish to write your own custom Media Query leave out the begining and ending parenthesis.' );?></p>
-  <p><?php echo t( 'Example:' );?></p>
-  <form class="form-horizontal">
-    <div class="control-group">
-      <label class="control-label">Custom Query</label>
-      <div class="controls">
-        <textarea rows="1" class="span5"><?php echo t( 'only screen and (min-width: 1px) and (max-width: 320px)' )?></textarea>
-      </div>
+  <h3><?php echo t( 'Interchange' );?></h3>
+</div>
+<p><?php echo t( 'The Interchange markup is a bit different than PictureFill\'s. If you wish to write your own custom Media Query leave out the begining and ending parenthesis.' );?></p>
+<p><?php echo t( 'Example:' );?></p>
+  <div class="clearifx">
+    <label class="control-label"><?php echo t( 'Custom Query' );?></label>
+    <div class="input">
+      <textarea rows="1" class="span5"><?php echo t( 'only screen and (min-width: 1px) and (max-width: 320px)' )?></textarea>
     </div>
-  </form>
+  </div>
+<div class="page-header">
+  <h3><?php echo t( 'PictureFill' ); ?></h3>
+</div>
+<p><?php echo t( 'If you wish to write your own custom Media Query for Picturefill do it as follows parentheis included:' );?></p>
+<p><?php echo t( 'Example:' );?></p>
+  <div class="clearifx">
+    <label class="control-label"><?php echo t( 'Custom Query' );?></label>
+    <div class="input">
+      <textarea rows="1" class="span5"><?php echo t( '(only screen and (min-width: 1px) and (max-width: 320px))' )?></textarea>
+    </div>
+  </div>
+<div>
   <div class="page-header">
-    <h3><?php echo t( 'PictureFill' ); ?></h3>
+    <h3><?php echo t( 'For More Information on Media queries, Foundation Interchange, or Picturefill' ); ?></h3>
   </div>
-  <p><?php echo t( 'If you wish to write your own custom Media Query for Picturefill do it as follows parentheis included:' );?></p>
-  <p><?php echo t( 'Example:' );?></p>
-    <form class="form-horizontal">
-    <div class="control-group">
-      <label class="control-label">Custom Query</label>
-      <div class="controls">
-        <textarea rows="1" class="span5"><?php echo t( '(only screen and (min-width: 1px) and (max-width: 320px))' )?></textarea>
-      </div>
-    </div>
-  </form>
-  <div>
-    <div class="page-header">
-      <h3><?php echo t( 'For More Information on Media queries, Foundation Interchange, or Picturefill' ); ?></h3>
-    </div>
-    <div class="well">
-      <p><?php echo t( 'Interchange' ); ?></p>
-      <a href="http://foundation.zurb.com/docs/components/interchange.html" target="_blank"><?php echo t('Foundation Interchange Website');?></a>
-    </div>
-    <div class="well">
-      <p><?php echo t('Picturefill'); ?></p>
-      <a href="https://github.com/scottjehl/picturefill" target="_blank"><?php echo t( 'Picturefill Github'  ); ?></a>
-    </div>
-    <div class="well">
-      <p><?php echo t( 'Media Queries' ); ?></p>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries" target="_blank"><?php echo t( 'Mozilla Developer Network: Media Queries' );?></a>
-    </div>
+  <div class="well">
+    <p><?php echo t( 'Interchange' ); ?></p>
+    <a href="http://foundation.zurb.com/docs/components/interchange.html" target="_blank"><?php echo t('Foundation Interchange Website');?></a>
   </div>
+  <div class="well">
+    <p><?php echo t('Picturefill'); ?></p>
+    <a href="https://github.com/scottjehl/picturefill" target="_blank"><?php echo t( 'Picturefill Github'  ); ?></a>
+  </div>
+  <div class="well">
+    <p><?php echo t( 'Media Queries' ); ?></p>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries" target="_blank"><?php echo t( 'Mozilla Developer Network: Media Queries' );?></a>
+  </div>
+</div>
 </div>
 <!-- 
   MAIN 
@@ -177,6 +173,15 @@ $screenSizesMQ = array(
             <option value="fileTitle" id="fileTitle" <?php if ($altChoice == 'fileTitle') {?>selected<?php }?> name="altChoice"><?php echo t( 'File Title' ); ?></option>
             <option value="fileDesc" id="fileDesc" <?php if ($altChoice == 'fileDesc') {?>selected<?php }?> name="altChoice"><?php echo t( 'File Description' ); ?></option>
             <option value="custom" id="custom" <?php if ($altChoice == 'custom') {?>selected<?php }?> name="altChoice"><?php echo t( 'Custom Alternate Text' ); ?></option>
+          </select>
+        </div>
+      </div>
+      <div id="internetExplorer" class="control-group">
+        <?php echo $form->label( 'ieSupport', 'Support Internet Explorer 8 Dekstop' );?>
+        <div class="controls">
+          <select name="ieSupport" id="ieSupport">
+            <option value="yes" id="yes" <?php if ($ieSupport == 'yes') {?>selected<?php }?> name="ieSupport"><?php echo t( 'Yes' ); ?></option>
+            <option value="no" id="no" <?php if ($ieSupport == 'no') {?>selected<?php }?> name="ieSupport"><?php echo t( 'No' ); ?></option>
           </select>
         </div>
       </div>
