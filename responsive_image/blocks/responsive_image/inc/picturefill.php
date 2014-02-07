@@ -5,22 +5,30 @@
 	$v               = View::GetInstance();
 	// Image helper
 	$image           = Loader::helper('image');
+	if (!empty($pictureID)) {
 	// default picture 
 	$default         = File::getByID($pictureID);
 	$defaultPath     = $default->getVersion()->getRelativePath();
+	}
 	// grab file desription or file title 
 	$fileDescription = $default->getApprovedVersion()->getDescription();
 	$fileTitle       = $default->getApprovedVersion()->getTitle();
 	// medium picture
+	if (!empty($mediumPictureFID)) {
 	$medium          = File::getByID($mediumPictureFID);
 	$mediumPath      = $medium->getVersion()->getRelativePath();
+	}
 	// large picture
+	if (!empty($largePictureFID)) {
 	$large           = File::getByID($largePictureFID);
 	$largePath       = $large->getVersion()->getRelativePath();
+	}
 	// extra large retina images
+	if (!empty($retinaPictureFID)) {
 	$retina          = File::getByID($retinaPictureFID);
 	$retinaPath      = $retina->getVersion()->getRelativePath();
-	
+	}
+
 	$defaultQuery    = '(min-width: 1px)';
 	$mediumQuery     = '(min-width: 641px)';
 	$largeQuery      = '(min-width: 1024px)';
@@ -52,18 +60,23 @@
 	}
 ?>
 <span data-picture data-alt="<?php echo $altText; ?>">
-    <span data-src="<?php echo $defaultPath;?>"></span>
-    <?php if (isset($medium)) {?>
-    <span data-src="<?php echo $mediumPath;?>" data-media="<?php echo $second_query;?>"></span>
-    <?php }?>
-    <?php if (isset($large)) {?>
-    <span data-src="<?php echo $largePath;?>" data-media="<?php echo $third_query;?>"></span>
-    <?php }?>
-    <?php if (isset($retina)) {?>
+	<span data-src="<?php echo $defaultPath;?>"></span>
+	<?php if (!empty($mediumPictureFID)) { ?>
+	<span data-src="<?php echo $mediumPath;?>" data-media="<?php echo $second_query;?>"></span>
+	<?php } ?>
+	<?php if (!empty($largePictureFID)) { ?>
+	<span data-src="<?php echo $largePath;?>" data-media="<?php echo $third_query;?>"></span>
+	<?php } ?>
+	<?php if (!empty($retinaPictureFID)) {  ?>
 	<span data-src="<?php echo $retinaPath;?>" data-media="<?php echo $fourth_query;?>"></span>
 	<?php } ?>
-    <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-    <noscript>
-        <img src="<?php echo $defaultPath;?>" alt="<?php echo $altText; ?>">
-    </noscript>
+	<?php if ($ieSupport == 'yes' ) { ?>
+	<!--[if (lt IE 9) & (!IEMobile)]>
+	<span data-src="<?php echo $mediumPath;?>"></span>
+	<![endif]-->
+	<?php }?>
+	<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+	<noscript>
+		<img src="<?php echo $defaultPath;?>" alt="<?php echo $altText; ?>">
+	</noscript>
 </span>
