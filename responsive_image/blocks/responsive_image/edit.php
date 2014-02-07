@@ -99,18 +99,48 @@ $foundationMedia = array(
   help tab 
 -->
 <div id="picturefill_help-tab" class="clearfix ui-helper-hidden">
-  <h5><?php echo t( 'PictureFill' ); ?></h5>
-  <p><?php echo t( 'Instead of the normal media query: <code>only screen and (min-width: 1000px)</code><br />
-  PictureFill takes the last media part <code>(min-width: 1000px)</code> and places it into a data-media selector' );?></p>
-  <p><?php echo t( 'The HTML output is as follows' );?></p>
-  <code>&ltspan data-src="<?php echo t('extralarge.jpg');?>" data-media="(min-width: 1000px)"&gt&lt/span&gt</code>
-  <br />
-  <br />
-  <p><?php echo t( 'When writting your custom query write <code>min-width: YOUR VIEWPORT/SCREENSIZE</code> with no parentheses or brackets.');?></p>
+  <div class="page-header">
+    <h3><?php echo t( 'Interchange' );?></h3>
+  </div>
+  <p><?php echo t( 'The Interchange markup is a bit different than PictureFill\'s. If you wish to write your own custom Media Query leave out the begining and ending parenthesis.' );?></p>
+  <p><?php echo t( 'Example:' );?></p>
+  <form class="form-horizontal">
+    <div class="control-group">
+      <label class="control-label">Custom Query</label>
+      <div class="controls">
+        <textarea rows="1" class="span5"><?php echo t( 'only screen and (min-width: 1px) and (max-width: 320px)' )?></textarea>
+      </div>
+    </div>
+  </form>
+  <div class="page-header">
+    <h3><?php echo t( 'PictureFill' ); ?></h3>
+  </div>
+  <p><?php echo t( 'If you wish to write your own custom Media Query for Picturefill do it as follows parentheis included:' );?></p>
+  <p><?php echo t( 'Example:' );?></p>
+    <form class="form-horizontal">
+    <div class="control-group">
+      <label class="control-label">Custom Query</label>
+      <div class="controls">
+        <textarea rows="1" class="span5"><?php echo t( '(only screen and (min-width: 1px) and (max-width: 320px))' )?></textarea>
+      </div>
+    </div>
+  </form>
   <div>
-    <p><?php echo t( 'Example' );?></p>
-    <p><?php echo t( 'Custom Query');?></p>
-    <input type="text" value="<?php echo t('min-width: 1000px');?>" />
+    <div class="page-header">
+      <h3><?php echo t( 'For More Information on Media queries, Foundation Interchange, or Picturefill' ); ?></h3>
+    </div>
+    <div class="well">
+      <p><?php echo t( 'Interchange' ); ?></p>
+      <a href="http://foundation.zurb.com/docs/components/interchange.html" target="_blank"><?php echo t('Foundation Interchange Website');?></a>
+    </div>
+    <div class="well">
+      <p><?php echo t('Picturefill'); ?></p>
+      <a href="https://github.com/scottjehl/picturefill" target="_blank"><?php echo t( 'Picturefill Github'  ); ?></a>
+    </div>
+    <div class="well">
+      <p><?php echo t( 'Media Queries' ); ?></p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries" target="_blank"><?php echo t( 'Mozilla Developer Network: Media Queries' );?></a>
+    </div>
   </div>
 </div>
 <!-- 
