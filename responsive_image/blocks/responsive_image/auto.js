@@ -47,4 +47,12 @@ $(document).ready(function() {
    ($(this).val() == "custom") ? $('#custom_div').show() : $('#custom_div').hide();
   });
 });
-
+// tabs 
+  var ActiveTab = "images"; 
+  $("#responsive_tabs a").click(function() {
+    $("li.ccm-nav-active").removeClass('ccm-nav-active');
+    $("#" + ActiveTab + "-tab").hide();
+    ActiveTab = $(this).attr('id');
+    $(this).parent().addClass("ccm-nav-active");
+    $("#" + ActiveTab + "-tab").show();
+  });
