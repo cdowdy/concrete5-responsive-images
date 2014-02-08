@@ -27,7 +27,7 @@ $foundationMedia = array(
   'medium'    => 'Minimum Screen Width 641px',
   'large'     => 'Minimum Screen Width1024px',
   'landscape' => 'Screen Orientation landscape',
-  'portrait'  => 'Screen Orientation portrait)',
+  'portrait'  => 'Screen Orientation portrait',
   'retina'    => 'Minimum Device Pixel ratio of 2',
   );
 $screenSizesMQ = array(
@@ -38,7 +38,8 @@ $screenSizesMQ = array(
   'Large'       => 'Minimum Screen Size 801 Pixels and Maximum Size of 1024 Pixels',
   'Extra Large' => 'Minimum Screen Size 1025 Pixels',
 
-  )
+  );
+$form->select('favoriteFruit', array('default' => 'Minimum Screen Width 1px', 'small' => 'Minimum Screen Width 1px', 'medium' => 'Minimum Screen Width 641px', 'large' => 'Minimum Screen Width 1024px', 'landscape' => 'Screen Orientation landscape', 'portrait' => 'Screen Orientation portrait', 'retina' => 'Minimum Device Pixel ratio of 2',), 'a');
 ?>
 
 <!-- 
@@ -216,7 +217,15 @@ $screenSizesMQ = array(
       <div id="first_query" class="control-group">
         <?php echo $form->label( 'defaultQuery', 'Choose Query' ); ?>
         <div class="controls">
-          <?php echo $form->select( 'defaultQuery', $foundationMedia, 'defaultQuery', array('style' => 'width: 80%') ); ?>
+          <select class="span5" name="defaultQuery" id="defaultQuery">
+            <option value="default" id="default" <?php if ($defaultQuery == 'default') {?>selected<?php }?> name="defaultQuery"><?php echo t( 'Default - Minimum Screen Width 1px' ); ?></option>
+            <option value="small" id="small" <?php if ($defaultQuery == 'small') {?>selected<?php }?> name="defaultQuery"><?php echo t( 'Small - Minimum Screen Width 1px' ); ?></option>
+            <option value="medium" id="medium" <?php if ($defaultQuery == 'medium') {?>selected<?php }?> name="defaultQuery"><?php echo t( 'Medium - Minimum Screen Width 641px' ); ?></option>
+            <option value="large" id="large" <?php if ($defaultQuery == 'large') {?>selected<?php }?> name="defaultQuery"><?php echo t( 'Large - Minimum Screen Width 1024px' ); ?></option>
+            <option value="landscape" id="landscape" <?php if ($defaultQuery == 'landscape') {?>selected<?php }?> name="defaultQuery"><?php echo t( 'Screen Orientation landscape' ); ?></option>
+            <option value="portrait" id="portrait" <?php if ($defaultQuery == 'portrait') {?>selected<?php }?> name="defaultQuery"><?php echo t( 'Screen Orientation portrait' ); ?></option>
+            <option value="retina" id="retina" <?php if ($defaultQuery == 'retina') {?>selected<?php }?> name="defaultQuery"><?php echo t( 'Minimum Device Pixel ratio of 2' ); ?></option>
+          </select>
           <span class="help-block">Default Media Query Not Used In PictureFill</span>
         </div>
       </div>
@@ -246,7 +255,15 @@ $screenSizesMQ = array(
         <div id="second_query" class="control-group">
           <?php echo $form->label( 'mediumQuery', 'Choose Query' ); ?>
           <div class="controls">
-            <?php echo $form->select( 'mediumQuery', $foundationMedia, 'medium', array('style' => 'width: 80%') ); ?>
+            <select class="span5" name="mediumQuery" id="mediumQuery">
+              <option value="default" id="default" <?php if ($mediumQuery == 'default') {?>selected<?php }?> name="mediumQuery"><?php echo t( 'Default - Minimum Screen Width 1px' ); ?></option>
+              <option value="small" id="small" <?php if ($mediumQuery == 'small') {?>selected<?php }?> name="mediumQuery"><?php echo t( 'Small - Minimum Screen Width 1px' ); ?></option>
+              <option value="medium" id="medium" <?php if ($mediumQuery == 'medium') {?>selected<?php }?> name="mediumQuery"><?php echo t( 'Medium - Minimum Screen Width 641px' ); ?></option>
+              <option value="large" id="large" <?php if ($mediumQuery == 'large') {?>selected<?php }?> name="mediumQuery"><?php echo t( 'Large - Minimum Screen Width 1024px' ); ?></option>
+              <option value="landscape" id="landscape" <?php if ($mediumQuery == 'landscape') {?>selected<?php }?> name="mediumQuery"><?php echo t( 'Screen Orientation landscape' ); ?></option>
+              <option value="portrait" id="portrait" <?php if ($mediumQuery == 'portrait') {?>selected<?php }?> name="mediumQuery"><?php echo t( 'Screen Orientation portrait' ); ?></option>
+              <option value="retina" id="retina" <?php if ($mediumQuery == 'retina') {?>selected<?php }?> name="mediumQuery"><?php echo t( 'Minimum Device Pixel ratio of 2' ); ?></option>
+            </select>
           </div>
         </div>
         <div id="custom_medium" class="control-group">
@@ -272,7 +289,15 @@ $screenSizesMQ = array(
         <div id="third_query" class="control-group">
           <?php echo $form->label( 'largeQuery', 'Choose Query' ); ?>
           <div class="controls">
-            <?php echo $form->select( 'largeQuery', $foundationMedia, 'large', array('style' => 'width: 80%') ); ?>
+            <select class="span5" name="largeQuery" id="largeQuery">
+              <option value="default" id="default" <?php if ($largeQuery == 'default') {?>selected<?php }?> name="largeQuery"><?php echo t( 'Default - Minimum Screen Width 1px' ); ?></option>
+              <option value="small" id="small" <?php if ($largeQuery == 'small') {?>selected<?php }?> name="largeQuery"><?php echo t( 'Small - Minimum Screen Width 1px' ); ?></option>
+              <option value="medium" id="medium" <?php if ($largeQuery == 'medium') {?>selected<?php }?> name="largeQuery"><?php echo t( 'Medium - Minimum Screen Width 641px' ); ?></option>
+              <option value="large" id="large" <?php if ($largeQuery == 'large') {?>selected<?php }?> name="largeQuery"><?php echo t( 'Large - Minimum Screen Width 1024px' ); ?></option>
+              <option value="landscape" id="landscape" <?php if ($largeQuery == 'landscape') {?>selected<?php }?> name="largeQuery"><?php echo t( 'Screen Orientation landscape' ); ?></option>
+              <option value="portrait" id="portrait" <?php if ($largeQuery == 'portrait') {?>selected<?php }?> name="largeQuery"><?php echo t( 'Screen Orientation portrait' ); ?></option>
+              <option value="retina" id="retina" <?php if ($largeQuery == 'retina') {?>selected<?php }?> name="largeQuery"><?php echo t( 'Minimum Device Pixel ratio of 2' ); ?></option>
+            </select>
           </div>
         </div>
         <div id="custom_large" class="control-group">
@@ -298,7 +323,15 @@ $screenSizesMQ = array(
         <div id="fourth_query" class="control-group">
           <?php echo $form->label( 'retinaQuery', 'Choose Query' ); ?>
           <div class="controls">
-            <?php echo $form->select( 'retinaQuery', $foundationMedia, 'retina', array('style' => 'width: 80%') ); ?>
+            <select class="span5" name="retinaQuery" id="retinaQuery">
+              <option value="default" id="default" <?php if ($retinaQuery == 'default') {?>selected<?php }?> name="retinaQuery"><?php echo t( 'Default - Minimum Screen Width 1px' ); ?></option>
+              <option value="small" id="small" <?php if ($retinaQuery == 'small') {?>selected<?php }?> name="retinaQuery"><?php echo t( 'Small - Minimum Screen Width 1px' ); ?></option>
+              <option value="medium" id="medium" <?php if ($retinaQuery == 'medium') {?>selected<?php }?> name="retinaQuery"><?php echo t( 'Medium - Minimum Screen Width 641px' ); ?></option>
+              <option value="large" id="large" <?php if ($retinaQuery == 'large') {?>selected<?php }?> name="retinaQuery"><?php echo t( 'Large - Minimum Screen Width 1024px' ); ?></option>
+              <option value="landscape" id="landscape" <?php if ($retinaQuery == 'landscape') {?>selected<?php }?> name="retinaQuery"><?php echo t( 'Screen Orientation landscape' ); ?></option>
+              <option value="portrait" id="portrait" <?php if ($retinaQuery == 'portrait') {?>selected<?php }?> name="retinaQuery"><?php echo t( 'Screen Orientation portrait' ); ?></option>
+              <option value="retina" id="retina" <?php if ($retinaQuery == 'retina') {?>selected<?php }?> name="retinaQuery"><?php echo t( 'Minimum Device Pixel ratio of 2' ); ?></option>
+            </select>
           </div>
         </div>
         <div id="custom_retina" class="control-group">
