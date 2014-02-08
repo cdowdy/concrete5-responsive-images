@@ -44,44 +44,20 @@
       break;
   }
 
-  if ($altChoice == 'fileTitle') {
-    $altText = $file_title_alt;
-  }
-  
-  if ($mediaQuery  == 'foundation' && isset($defaultQuery)) {
-    $first_query = $defaultQuery;
-  }
-  if ($mediaQuery  == 'foundation' && isset($mediumQuery)) {
-    $second_query = $mediumQuery;
-  }
-  if ($mediaQuery  == 'foundation' && isset($largeQuery)) {
-    $third_query = $largeQuery;
-  }
-  if ($mediaQuery  == 'foundation' && isset($retinaQuery)) {
-    $fourth_query = $retinaQuery;
-  }
-  if ($mediaQuery  == 'customQuery' && isset($customDefault)) {
-    $first_query = $customDefault;
-  }
-  if ($mediaQuery  == 'customQuery' && isset($customMedium)) {
-    $second_query = $customMedium;
-  }
-  if ($mediaQuery  == 'customQuery' && isset($customLarge)) {
-    $third_query = $customLarge;
-  }
-  if ($mediaQuery  == 'customQuery' && isset($customretina)) {
-    $fourth_query = $customretina;
-  }
-  
 ?>
 <?php if ($page->isEditMode()) { ?>
 <div class="ccm-edit-mode-disabled-item" style="height: 400px">
   <div style="padding: 200px 0px 0px 0px"><?php echo t('Interchange Images Not Displayed in Edit Mode')?></div>
 </div>
 <?php } ?>
-<img data-interchange="[<?php echo $defaultPath;?>, (<?php echo $first_query; ?>)]<?php if (!empty($mediumPictureFID)) { ?>,[<?php echo $mediumPath;?>, (<?php echo $second_query;?>)]<?php }?><?php if (!empty($largePictureFID)) { ?>,[<?php echo $largePath;?>, (<?php echo $third_query;?>)]<?php }?><?php if (!empty($retinaPictureFID)) {  ?>,[<?php echo $retinaPath;?>, (<?php echo $fourth_query;?>)]<?php }?>" alt="<?php echo $alternateText; ?>">
+<?php if ($mediaQuery == 'foundation' ) {?>
+<img data-interchange="[<?php echo $defaultPath;?>, (<?php echo $defaultQuery; ?>)]<?php if (!empty($mediumPictureFID)) { ?>,[<?php echo $mediumPath;?>, (<?php echo $mediumQuery;?>)]<?php }?><?php if (!empty($largePictureFID)) { ?>,[<?php echo $largePath;?>, (<?php echo $largeQuery;?>)]<?php }?><?php if (!empty($retinaPictureFID)) {  ?>,[<?php echo $retinaPath;?>, (<?php echo $retinaQuery;?>)]<?php }?>" alt="<?php echo $alternateText; ?>">
 <noscript><img src="<?php echo $defaultPath;?>" alt="<?php echo $alternateText; ?>"></noscript>
-
+<?php } ?>
+<?php if ($mediaQuery == 'customQuery' ) { ?>
+<img data-interchange="[<?php echo $defaultPath;?>, (<?php echo $customDefault; ?>)]<?php if (!empty($mediumPictureFID)) { ?>,[<?php echo $mediumPath;?>, (<?php echo $customMedium;?>)]<?php }?><?php if (!empty($largePictureFID)) { ?>,[<?php echo $largePath;?>, (<?php echo $customLarge;?>)]<?php }?><?php if (!empty($retinaPictureFID)) {  ?>,[<?php echo $retinaPath;?>, (<?php echo $customretina;?>)]<?php }?>" alt="<?php echo $alternateText; ?>">
+<noscript><img src="<?php echo $defaultPath;?>" alt="<?php echo $alternateText; ?>"></noscript>
+<?php } ?>
 
 
 <?php
