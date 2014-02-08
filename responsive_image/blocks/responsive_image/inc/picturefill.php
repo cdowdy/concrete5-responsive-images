@@ -28,12 +28,78 @@
   $retina          = File::getByID($retinaPictureFID);
   $retinaPath      = $retina->getVersion()->getRelativePath();
   }
-  
-  $defaultQuery    = '(min-width: 1px)';
-  $mediumQuery     = '(min-width: 641px)';
-  $largeQuery      = '(min-width: 1024px)';
-  $retinaQuery     = '(-webkit-min-device-pixel-ratio: 2)';
 
+  // convert foundation media query strings to actual media querires to be used by 
+  // match media in picturefill js
+  // probably a better way to do this but... well im having a giant brain fart 
+
+  // For $mediumQuery
+  if ($mediaQuery == 'foundation' && $mediumQuery == 'default') {
+    $mediumQuery = '(min-width: 1px)';
+  }
+  if ($mediaQuery == 'foundation' && $mediumQuery == 'small') {
+    $mediumQuery == '(min-width: 1px)';
+  }
+  if ($mediaQuery == 'foundation' && $mediumQuery == 'medium') {
+    $mediumQuery = '(min-width: 641px)';
+  }
+  if ($mediaQuery == 'foundation' && $mediumQuery == 'large') {
+    $mediumQuery = '(min-width: 1024px)';
+  }
+  if ($mediaQuery == 'foundation' && $mediumQuery == 'landscape') {
+    $mediumQuery = '(orientation: landscape)';
+  }
+  if ($mediaQuery == 'foundation' && $mediumQuery == 'portrait') {
+    $mediumQuery = '(orientation: portrait)';
+  }
+  if ($mediaQuery == 'foundation' && $mediumQuery == 'retina') {
+    $mediumQuery = '(-webkit-min-device-pixel-ratio: 2),(min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1),(min-device-pixel-ratio: 2),(min-resolution: 192dpi),(min-resolution: 2dppx)';
+  }
+  // for $largeQuery 
+  if ($mediaQuery == 'foundation' && $largeQuery == 'default') {
+    $largeQuery = '(min-width: 1px)';
+  }
+  if ($mediaQuery == 'foundation' && $largeQuery == 'small') {
+    $largeQuery == '(min-width: 1px)';
+  }
+  if ($mediaQuery == 'foundation' && $largeQuery == 'medium') {
+    $largeQuery = '(min-width: 641px)';
+  }
+  if ($mediaQuery == 'foundation' && $largeQuery == 'large') {
+    $largeQuery = '(min-width: 1024px)';
+  }
+  if ($mediaQuery == 'foundation' && $largeQuery == 'landscape') {
+    $largeQuery = '(orientation: landscape)';
+  }
+  if ($mediaQuery == 'foundation' && $largeQuery == 'portrait') {
+    $largeQuery = '(orientation: portrait)';
+  }
+  if ($mediaQuery == 'foundation' && $largeQuery == 'retina') {
+    $largeQuery = '(-webkit-min-device-pixel-ratio: 2),(min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1),(min-device-pixel-ratio: 2),(min-resolution: 192dpi),(min-resolution: 2dppx)';
+  }
+
+  // for $retinaQuery 
+  if ($mediaQuery == 'foundation' && $retinaQuery == 'default') {
+    $retinaQuery = '(min-width: 1px)';
+  }
+  if ($mediaQuery == 'foundation' && $retinaQuery == 'small') {
+    $retinaQuery == '(min-width: 1px)';
+  }
+  if ($mediaQuery == 'foundation' && $retinaQuery == 'medium') {
+    $retinaQuery = '(min-width: 641px)';
+  }
+  if ($mediaQuery == 'foundation' && $retinaQuery == 'large') {
+    $retinaQuery = '(min-width: 1024px)';
+  }
+  if ($mediaQuery == 'foundation' && $retinaQuery == 'landscape') {
+    $retinaQuery = '(orientation: landscape)';
+  }
+  if ($mediaQuery == 'foundation' && $retinaQuery == 'portrait') {
+    $retinaQuery = '(orientation: portrait)';
+  }
+  if ($mediaQuery == 'foundation' && $retinaQuery == 'retina') {
+    $retinaQuery = '(-webkit-min-device-pixel-ratio: 2),(min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1),(min-device-pixel-ratio: 2),(min-resolution: 192dpi),(min-resolution: 2dppx)';
+  }
   $alternateText = '';
 
   switch ($altChoice) {
@@ -47,43 +113,31 @@
       $alternateText = $altText;
       break;
    }
-
-  if ($mediaQuery == 'foundation' && isset($defaultQuery)) {
-    $first_query = $defaultQuery;
-  }
-  if ($mediaQuery == 'foundation' && isset($mediumQuery)) {
-    $second_query = $mediumQuery;
-  }
-  if ($mediaQuery == 'foundation' && isset($largeQuery)) {
-    $third_query = $largeQuery;
-  }
-  if ($mediaQuery == 'foundation' && isset($retinaQuery)) {
-    $fourth_query = $retinaQuery;
-  }
-  if ($mediaQuery == 'customQuery' && isset($customDefault)) {
-    $first_query = $customDefault;
-  }
-  if ($mediaQuery == 'customQuery' && isset($customMedium)) {
-    $second_query = $customMedium;
-  }
-   if ($mediaQuery == 'customQuery' && isset($customLarge)) {
-    $third_query = $customLarge;
-  }
-  if ($mediaQuery == 'customQuery' && isset($customretina)) {
-    $fourth_query = $customretina;
-  }
 ?>
 <span data-picture data-alt="<?php echo $alternateText; ?>">
   <span data-src="<?php echo $defaultPath;?>"></span>
+<?php if ($mediaQuery == 'foundation' ) {?>
   <?php if (!empty($mediumPictureFID)) { ?>
-  <span data-src="<?php echo $mediumPath;?>" data-media="<?php echo $second_query;?>"></span>
+  <span data-src="<?php echo $mediumPath;?>" data-media="<?php echo $mediumQuery;?>"></span>
   <?php } ?>
   <?php if (!empty($largePictureFID)) { ?>
-  <span data-src="<?php echo $largePath;?>" data-media="<?php echo $third_query;?>"></span>
+  <span data-src="<?php echo $largePath;?>" data-media="<?php echo $largeQuery;?>"></span>
   <?php } ?>
   <?php if (!empty($retinaPictureFID)) {  ?>
-  <span data-src="<?php echo $retinaPath;?>" data-media="<?php echo $fourth_query;?>"></span>
+  <span data-src="<?php echo $retinaPath;?>" data-media="<?php echo $retinaQuery;?>"></span>
   <?php } ?>
+<?php } ?>
+<?php if ($mediaQuery == 'customQuery') { ?>
+  <?php if (!empty($mediumPictureFID)) { ?>
+  <span data-src="<?php echo $mediumPath;?>" data-media="<?php echo $customMedium;?>"></span>
+  <?php } ?>
+  <?php if (!empty($largePictureFID)) { ?>
+  <span data-src="<?php echo $largePath;?>" data-media="<?php echo $customLarge;?>"></span>
+  <?php } ?>
+  <?php if (!empty($retinaPictureFID)) {  ?>
+  <span data-src="<?php echo $retinaPath;?>" data-media="<?php echo $customretina;?>"></span>
+<?php } ?>
+<?php } ?>
   <?php if ($ieSupport == 'yes' ) { ?>
   <!--[if (lt IE 9) & (!IEMobile)]>
   <span data-src="<?php echo $mediumPath;?>"></span>
