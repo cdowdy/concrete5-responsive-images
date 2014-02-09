@@ -129,13 +129,13 @@
 <?php } ?>
 <?php if ($mediaQuery == 'customQuery') { ?>
   <?php if (!empty($mediumPictureFID)) { ?>
-  <span data-src="<?php echo $mediumPath;?>" data-media="<?php echo $customMedium;?>"></span>
+  <span data-src="<?php echo $mediumPath;?>" data-media="(<?php echo $customMedium;?>)"></span>
   <?php } ?>
   <?php if (!empty($largePictureFID)) { ?>
-  <span data-src="<?php echo $largePath;?>" data-media="<?php echo $customLarge;?>"></span>
+  <span data-src="<?php echo $largePath;?>" data-media="(<?php echo $customLarge;?>)"></span>
   <?php } ?>
   <?php if (!empty($retinaPictureFID)) {  ?>
-  <span data-src="<?php echo $retinaPath;?>" data-media="<?php echo $customretina;?>"></span>
+  <span data-src="<?php echo $retinaPath;?>" data-media="(<?php echo $customretina;?>)"></span>
 <?php } ?>
 <?php } ?>
   <?php if ($ieSupport == 'yes' ) { ?>
