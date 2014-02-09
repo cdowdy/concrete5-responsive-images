@@ -113,12 +113,19 @@ $foundationMedia = array(
 <div class="page-header">
   <h3><?php echo t( 'PictureFill' ); ?></h3>
 </div>
-<p><?php echo t( 'If you wish to write your own custom Media Query leave out the begining and ending parenthesis.' );?></p>
+<p><?php echo t( 'If you wish to write your own custom Media Query leave out the "(only screen and ...)" part.' );?></p>
 <p><?php echo t( 'Example:' );?></p>
   <div class="clearifx">
     <label class="control-label"><?php echo t( 'Custom Query' );?></label>
     <div class="input">
-      <textarea rows="1" class="span5"><?php echo t( 'only screen and (min-width: 1px) and (max-width: 320px)' )?></textarea>
+      <textarea rows="1" class="span5"><?php echo t( '(min-width: 1px)' )?></textarea>
+    </div>
+  </div>
+  <p><?php echo t('If it is a compound media query do it as follows');?></p>
+  <div class="clearifx">
+    <label class="control-label"><?php echo t( 'Custom Query' );?></label>
+    <div class="input">
+      <textarea rows="1" class="span5"><?php echo t( '(min-width: 320px) and (max-width: 640px)' )?></textarea>
     </div>
   </div>
 <div>
