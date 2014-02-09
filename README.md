@@ -19,7 +19,10 @@ Foundation Interchange
 
 PictureFill 
 ===========
-![Demo Gif](./screens/responsive_picturefill.gif)   
+![Demo Gif](./screens/responsive_picturefill.gif)  
+  
+**Custom Media Queries with an image specifically for landscape**
+![Demo Gif](./screens/custom_picturefill.gif)
 
 **To Do**  
 [ ] lots... maybe polymer x-picture
