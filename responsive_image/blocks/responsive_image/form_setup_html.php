@@ -111,7 +111,7 @@ $form->select('favoriteFruit', array('default' => 'Minimum Screen Width 1px', 's
   <div class="page-header">
   <h3><?php echo t( 'Interchange' );?></h3>
 </div>
-<p><?php echo t( 'The Interchange markup is a bit different than PictureFill\'s. If you wish to write your own custom Media Query leave out the begining and ending parenthesis.' );?></p>
+<p><?php echo t( 'If you wish to write your own custom Media Query leave out the begining and ending parenthesis.' );?></p>
 <p><?php echo t( 'Example:' );?></p>
   <div class="clearifx">
     <label class="control-label"><?php echo t( 'Custom Query' );?></label>
@@ -122,12 +122,12 @@ $form->select('favoriteFruit', array('default' => 'Minimum Screen Width 1px', 's
 <div class="page-header">
   <h3><?php echo t( 'PictureFill' ); ?></h3>
 </div>
-<p><?php echo t( 'If you wish to write your own custom Media Query for Picturefill do it as follows parentheis included:' );?></p>
+<p><?php echo t( 'If you wish to write your own custom Media Query leave out the begining and ending parenthesis.' );?></p>
 <p><?php echo t( 'Example:' );?></p>
   <div class="clearifx">
     <label class="control-label"><?php echo t( 'Custom Query' );?></label>
     <div class="input">
-      <textarea rows="1" class="span5"><?php echo t( '(only screen and (min-width: 1px) and (max-width: 320px))' )?></textarea>
+      <textarea rows="1" class="span5"><?php echo t( 'only screen and (min-width: 1px) and (max-width: 320px)' )?></textarea>
     </div>
   </div>
 <div>
