@@ -39,7 +39,6 @@ $screenSizesMQ = array(
   'Extra Large' => 'Minimum Screen Size 1025 Pixels',
 
   );
-$form->select('favoriteFruit', array('default' => 'Minimum Screen Width 1px', 'small' => 'Minimum Screen Width 1px', 'medium' => 'Minimum Screen Width 641px', 'large' => 'Minimum Screen Width 1024px', 'landscape' => 'Screen Orientation landscape', 'portrait' => 'Screen Orientation portrait', 'retina' => 'Minimum Device Pixel ratio of 2',), 'a');
 ?>
 
 <!-- 
