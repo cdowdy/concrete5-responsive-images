@@ -1,3 +1,6 @@
+This is no longer maintained :(  
+===============================  
+
 concrete5-responsive-images
 ===========================
 
